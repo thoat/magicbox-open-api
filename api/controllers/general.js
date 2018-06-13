@@ -141,9 +141,9 @@ export function getCountriesAndSourceData(request, response) {
 
 /**
  * Returns a list of (country code, source name, shapefile set} for the given search key
- * @param{String} request - request object
- * @param{String} response - response object
- * @return{Promise} fulfilled when records are returned
+ * @param   {String} request - request object
+ * @param   {String} response - response object
+ * @return  {Promise} fulfilled when records are returned
  */
 export function getCountriesAndSourceData(request, response) {
   // if the path is /v1/mobility/countries, key will be 'mobility'
@@ -156,6 +156,7 @@ export function getCountriesAndSourceData(request, response) {
   .catch(err => {
     logger.logErrorResponse(request, err)
     response.json({
+      message: err
     })
   })
 }
